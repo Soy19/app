@@ -1,14 +1,17 @@
 import tkinter as tk
 import os
-import time
-f = "username"
-g = "password"
-n = 0
 
 root = tk.Tk()
 
+def key_event(e):
+    z = e.keysym
+    if z == "Return":
+        a()
+root.bind("<KeyPress>", key_event)
 
 def a():
+    f = "username"
+    g = "password"
     d = k.get()
     e = l.get()
     if d == f:
@@ -17,10 +20,12 @@ def a():
         else:
             m = tk.Label(root, text="Incorret password", foreground='red')
             m.place(x=0, y=100)
+
+            
+
     else:
         m = tk.Label(root, text="Incorret username", foreground='red')
         m.place(x=0, y=100)
-
 
 b = tk.Label(root, text="username")
 h = b.place(x=0, y=0)
